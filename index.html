@@ -1,128 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人网页</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background-color: #f0f0f0;
             color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+        }
+        header {
+            background-color: #282c34;
+            padding: 20px;
+            text-align: center;
+            color: white;
         }
         .container {
             width: 90%;
-            max-width: 1200px;
             margin: 0 auto;
+        }
+        .intro, .job, .projects {
+            margin: 20px 0;
             padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        header, footer {
-            width: 100%;
-            text-align: center;
-            background-color: #282c34;
-            color: white;
-            padding: 10px 0;
+        .section-title {
+            margin-bottom: 15px;
+            color: #007acc;
+            font-size: 1.5em;
         }
-        .content {
+        .grid {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
         }
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-            flex: 1 1 calc(33.333% - 40px);
-            max-width: calc(33.333% - 40px);
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-        .card-content {
+        .grid-item {
+            background-color: white;
             padding: 20px;
-            text-align: left;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+        }
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #005f99;
         }
         @media (max-width: 768px) {
-            .card {
-                flex: 1 1 calc(50% - 40px);
-                max-width: calc(50% - 40px);
+            .grid-item {
+                width: calc(50% - 20px);
             }
         }
         @media (max-width: 480px) {
-            .card {
-                flex: 1 1 100%;
-                max-width: 100%;
+            .grid-item {
+                width: 100%;
             }
-        }
-        .contact {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .contact a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        .contact a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>我的个人网页</h1>
+        <h1>欢迎来到我的个人网页</h1>
     </header>
     <div class="container">
         <section class="intro">
-            <h2>个人介绍</h2>
-            <p>我是张奥迪，目前任职于 XYZ 公司，担任高级开发工程师。我的项目涵盖了人工智能、区块链等前沿技术。</p>
+            <h2 class="section-title">个人介绍</h2>
+            <p>这里是个人介绍的内容。</p>
         </section>
-        <section class="content">
-            <div class="card">
-                <img src="project1.jpg" alt="Project 1">
-                <div class="card-content">
-                    <h3>项目介绍 1</h3>
-                    <p>项目 1 的简要描述。</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="project2.jpg" alt="Project 2">
-                <div class="card-content">
-                    <h3>项目介绍 2</h3>
-                    <p>项目 2 的简要描述。</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="project3.jpg" alt="Project 3">
-                <div class="card-content">
-                    <h3>项目介绍 3</h3>
-                    <p>项目 3 的简要描述。</p>
-                </div>
-            </div>
-            <!-- 更多项目可以按照上述格式添加 -->
+        <section class="job">
+            <h2 class="section-title">任职职务</h2>
+            <p>这里是任职职务的内容。</p>
         </section>
-        <section class="contact">
-            <h2>联系我</h2>
-            <p>你可以通过 <a href="mailto:your.email@example.com">your.email@example.com</a> 联系我。</p>
+        <section class="projects">
+            <h2 class="section-title">项目介绍</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>项目 1</h3>
+                    <p>项目 1 的描述。</p>
+                </div>
+                <div class="grid-item">
+                    <h3>项目 2</h3>
+                    <p>项目 2 的描述。</p>
+                </div>
+                <div class="grid-item">
+                    <h3>项目 3</h3>
+                    <p>项目 3 的描述。</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact-form">
+            <h2 class="section-title">联系我</h2>
+            <form>
+                <input type="text" name="name" placeholder="姓名" required>
+                <input type="email" name="email" placeholder="电子邮件" required>
+                <textarea name="message" rows="5" placeholder="留言" required></textarea>
+                <button type="submit">发送</button>
+            </form>
         </section>
     </div>
-    <footer>
-        <p>&copy; 2024 张奥迪. 保留所有权利.</p>
-    </footer>
 </body>
 </html>
